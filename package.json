@@ -1,0 +1,12 @@
+{
+  "name": "mixx-bot",
+  "version": "1.0.0",
+  "description": "Mixx 50GB Offer with Telegram Integration",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo 'No build step needed'"
+  },
+  "dependencies": {
+    "@netlify/functions": "^2.4.0"
+  }
+}
